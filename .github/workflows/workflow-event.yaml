@@ -5,7 +5,7 @@ on:
     types: [completed]
 
 jobs:
-  workflow-event-triggered:
+  event-triggered:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This event was triggered because 'Repository Events' workflow was completed"
