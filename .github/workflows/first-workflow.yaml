@@ -3,12 +3,24 @@ name : First Workflow
 on : [push]
 
 jobs:
-    run-shell-command:
-        runs-on: ubuntu-latest
-        steps:
-            - name: echo a string
-              run: echo "Hello World"
-            - name: MultiLine Command
-              run: |
-                node -v
-                npm -v
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: MultiLine Command
+        run: |
+          node -v
+          npm -v
+  mac-parallel-job:
+    runs-on: mac-latest
+		steps:
+			- name: "view sw version"
+				run: sw_vers
+	win-dependent-job:
+		runs-on: windows-latest
+		needs: run-shell-command
+		steps:
+			- name: echo a string
+				run: Write-Output "Windows String"
+
