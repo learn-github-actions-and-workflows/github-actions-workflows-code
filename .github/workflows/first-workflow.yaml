@@ -22,5 +22,5 @@ jobs:
     needs: run-shell-command
     steps:
       - name: echo a string
-        run: Write-Output "Windows String"
+        run: Write-Output "Windows Strings"
 
