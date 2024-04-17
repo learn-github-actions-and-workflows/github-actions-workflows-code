@@ -1,7 +1,6 @@
 name: Manual Triggered Workflow
 on:
   workflow_dispatch:
-
 jobs:
   log-info:
     runs-on: ubuntu-latest
