@@ -7,11 +7,6 @@ on:
       - "feature/**"
       - "!feature/feata"
       - "!feature/featb"
-    tags:
-      - v1.*
-      - "!v1.1.1"
-    paths:
-      - "**.js"
   pull_request:
     types: [opened, assigned, closed, reopened]
   issues:
