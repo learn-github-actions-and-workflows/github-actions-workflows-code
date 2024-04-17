@@ -1,0 +1,21 @@
+name: Expressions and Contexts
+on: [push, pull_request, issues, workflow_dispatch]
+
+jobs:
+  using-expressios-and-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Expressions
+        id: expressions
+        run: |
+          echo ${{ 'This is a string' }}
+          echo ${{ 1>2 }}
+          echo ${{ 'String'== 'string' }}
+          echo ${{ true && false }}
+      - name: Dump Contexts
+        run: |
+          echo '${{ toJson(github)}}'
+          echo '${{ toJson(job)}}'
+          echo '${{ toJson(secrets)}}'
+          echo '${{ toJson(steps)}}'
+          echo '${{ toJson(runner)}}'
