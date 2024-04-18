@@ -4,7 +4,7 @@ run-name: "Expression and Context was triggered by @${{ github.actor }}, event: 
 jobs:
   runs-on-issue:
     runs-on: ubuntu-latest
-    if: contains(fromJson('["push", "pull_request"]'), github.event_name)
+    if: contains(fromJson('["issues", "pull_request"]'), github.event_name)
     steps:
       - name: Issue Bug type
         if: contains(github.event.issue.labels.*.name, 'bug')
