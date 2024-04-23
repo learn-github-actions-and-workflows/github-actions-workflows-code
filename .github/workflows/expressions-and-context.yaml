@@ -1,3 +1,5 @@
+#environment variable is evaluated on the runner machine and context is evalued by github actions and sent to runner machine
+
 name: Expressions and Contexts
 on: [push, pull_request, issues, workflow_dispatch]
 run-name: "Expression and Context was triggered by @${{ github.actor }}, event: ${{ github.event_name }}"
